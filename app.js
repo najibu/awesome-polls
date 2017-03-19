@@ -33,6 +33,9 @@ app.use(session({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Here we are going to use add our routes in a use statement which will link the routes we defined to our app.
+app.use('/', routes);
+
 // catch 404 and forward to error handler.
 app.use(function(req, res, next){
   var err = new Error('Not Found');
